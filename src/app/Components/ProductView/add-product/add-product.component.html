@@ -1,0 +1,33 @@
+<div class="container">
+    <label for="">Prodcut Category</label> 
+    <div class="d-flex align-items-center">
+        <select class="form-select form-select-lg mb-3"  [(ngModel)]="newproduct.CategoryID" #catdropdown >  
+            <option *ngFor="let category of  categoriesList" [value]="category.id">
+                {{category.Name}}</option>
+        </select>
+    </div> 
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Product Name</span>
+        <input required [(ngModel)]="newproduct.Name" type="text" class="form-control"  aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Product ID</span>
+        <input type="number" required [(ngModel)]="newproduct.id" class="form-control"  aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Product Price</span>
+        <input type="number" class="form-control"  required [(ngModel)]="newproduct.Price" aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Product Quantity</span>
+        <input type="number" required [(ngModel)]="newproduct.Quantity" class="form-control"  aria-describedby="basic-addon1">
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">Product Image "URL"</span>
+        <input type="text" class="form-control" required [(ngModel)]="newproduct.ImgURL" aria-describedby="basic-addon1">
+      </div>
+      
+    <button  class="btn btn-primary submit" (click)="addnewProduct()">Add Product</button>
+    <div class="success bg-success text-light p-3 fs-3 m-2" *ngIf="completed"> Product Inserted</div>  
+    <div class="success bg-danger text-light p-3 fs-3 m-2" *ngIf="notcompleted"> Some Details IS Missed</div>  
+</div>

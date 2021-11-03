@@ -1,0 +1,43 @@
+<div class="container-fuild bg-danger">
+  <div class="container bg-danger">
+    <div class="row">
+      <img src="assets/ads.jpeg" class="img-fuild" alt="">
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg  bg-dark">
+    <div class="container-fluid">
+        <!-- <img src="{{Store.logo}}" style="width: 50px ; height: 50px; border-radius:40%" class="img-responsive me-4"
+            alt=""> -->
+        <a class="navbar-brand" href="#">{{Store.name}}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item" >
+                    <a class="nav-link d-inline" aria-current="page" [routerLink]="['/home']" routerLinkActive="active" >Home</a>
+                    <a class="nav-link d-inline" aria-current="page" [routerLink]="['/product']" routerLinkActive="active" >Produts</a>
+                    <a class="nav-link d-inline" aria-current="page" [routerLink]="['/user/profile']" routerLinkActive="active" >My Profile</a>
+                    <a class="nav-link d-inline" aria-current="page" [routerLink]="['/user/login']" routerLinkActive="active" >Login</a>
+                    <a class="nav-link d-inline" aria-current="page" [routerLink]="['/admin/insertproduct']" routerLinkActive="active" >Admin</a>
+                    <a class="nav-link d-inline" aria-current="page" [routerLink]="['req-products']" routerLinkActive="active" >req-products</a>
+                    
+                </li>
+            </ul>
+            <div class="d-flex">
+                <div *ngIf="greating!=''">
+                    <div class="alert py-2 alert-info  mx-5 my-auto" style="width:300px" role="alert">
+                        {{greating}}
+                    </div>
+
+                </div>
+                <input class=" form-control me-2" placeholder="Enter Your Name" [(ngModel)]="cstName">
+                <button class="btn btn-primary" type="submit" (click)="displayName()">Save</button>
+
+            </div>
+        </div>
+    </div>
+</nav>

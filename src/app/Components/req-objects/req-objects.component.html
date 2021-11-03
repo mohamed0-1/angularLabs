@@ -1,0 +1,24 @@
+
+<div class=" py-5 d-flex flex-wrap justify-content-evenly">
+
+    <div  *ngFor="let product of datalist.data " style="width: 15rem;">
+        <div class="card my-3 " appRounded>
+            <div class="card-body">
+                <p class="card-text  fw-bold" [style.color]="product?.color"><span class="text-secondary" >Name: </span> {{product?.name}}</p>
+                <p class="card-text  fw-bold" [style.color]="product?.color"><span class="text-secondary" >Product ID: </span> {{product?.id}}</p>
+                <p class="card-text  fw-bold" [style.color]="product?.color"><span class="text-secondary">Year: </span>{{product.year}}</p>
+                 <p class="card-text  fw-bold" [style.color]="product?.color"><span class="text-secondary">Color: </span> {{product?.color}}</p>
+                <p class="card-text  fw-bold" [style.color]="product?.color"><span class="text-secondary">pantone_value: </span> {{product?.pantone_value}}</p>
+                <div class="form-outline my-2"> 
+                </div>
+                
+            </div>
+        </div>
+        <div>
+            
+        </div>
+    </div>
+    <div class="supp bg-info fw-bold text-white p-5 text-center">
+        <label class="m-3" for="">{{datalist.support.text}}</label><br>
+       <a class="btn btn-warning text-white" [href]="datalist.support.url ">Suuport</a> 
+    </div>
